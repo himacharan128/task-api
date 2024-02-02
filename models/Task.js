@@ -7,6 +7,7 @@ const taskSchema = new mongoose.Schema({
     priority: { type: Number, required: true },
     status: { type: String, enum: ['TODO', 'IN_PROGRESS', 'DONE'], default: 'TODO' },
     sub_tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'SubTask' }],
+    user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, // New field for user_id
     deleted_at: { type: Date, default: null },
 }, { timestamps: true });
 

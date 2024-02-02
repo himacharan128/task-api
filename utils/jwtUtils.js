@@ -1,10 +1,7 @@
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
-function generateToken(userId) {
-  return jwt.sign({ user_id: userId }, 'SecretKey', { expiresIn: '1h' });
-}
+const user_id = '65bd0c001b0bc8139415dd96';
+const token = jwt.sign({ user_id }, 'secret', { expiresIn: '1h' });
 
-// Example usage:
-const userId = '65bd0c001b0bc8139415dd96'; // Replace with the actual user ID
-const token = generateToken(userId);
-console.log(token);
+console.log('Generated JWT token:', token);

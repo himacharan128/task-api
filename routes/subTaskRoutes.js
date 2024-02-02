@@ -10,7 +10,7 @@ router.post('/subtasks', subTaskController.createSubTask);
 router.get('/subtasks', subTaskController.getAllSubTasks);
 
 // Get subtask by ID
-router.get('/subtasks/:id', subTaskController.getSubTaskById);
+router.get('/subtasks/:id', subTaskController.getSubTasksByTaskId);
 
 // Update subtask by ID
 router.put('/subtasks/:id', subTaskController.updateSubTaskById);
